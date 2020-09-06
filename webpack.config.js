@@ -10,6 +10,12 @@ module.exports={
     path:path.resolve(__dirname,'dist'),
     filename:'js/app.js'
   },
+  resolve:{
+    alias:{
+      page:path.resolve(__dirname,'src/page'),
+      cp:path.resolve(__dirname,'src/component')
+    }
+  },
   optimization:{
     splitChunks:{
       chunks:'all'
@@ -17,7 +23,11 @@ module.exports={
   },
   devtool:'inline-source-map',
   devServer:{
-    contentBase:'./dist'
+    open:true,
+    contentBase:'./dist',
+    historyApiFallback:{
+      index:'/dist/index.html'
+    }
   },
   module: {
     rules: [
