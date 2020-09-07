@@ -1,10 +1,12 @@
+$width40:40px;
+
 .topnav{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 30;
-  height: 40px;
+  height: $width40;
   font-size: 12px;
   color: #b0b0b0;
   background: #333;
@@ -12,13 +14,37 @@
     width: 1226px;
     margin-right: auto;
     margin-left: auto;
+    .topbar-nav{
+      float: left;
+      height: $width40;
+      line-height: $width40;
+    }
+    a{
+      color: #b0b0b0;
+      line-height: $width40;
+      display: inline-block;
+    }
+    .sep {
+      margin: 0 .3em;
+      color: #424242;
+    }
+    .topbar-info {
+      position: relative;
+      float: right;
+      height: $width40;
+      line-height: $width40;
+      .link {
+        padding: 0 5px;
+        text-align: center;
+      }
+    }
   }
 }
 
 .home-hero-container {
   position: relative;
   z-index: 10;
-  margin-top: 40px;
+  margin-top: $width40;
   &.container {
     width: 1226px;
     margin-right: auto;
