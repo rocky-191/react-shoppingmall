@@ -13,7 +13,9 @@ module.exports={
   resolve:{
     alias:{
       page:path.resolve(__dirname,'src/page'),
-      cp:path.resolve(__dirname,'src/component')
+      cp:path.resolve(__dirname,'src/component'),
+      utils:path.resolve(__dirname,'src/utils'),
+      service:path.resolve(__dirname,'src/service')
     }
   },
   optimization:{

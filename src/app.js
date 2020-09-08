@@ -18,17 +18,21 @@ class App extends React.Component{
   render(){
     return (
       <Router>
-          <Layout>
-            <Switch>
-              <Route exact path="/" component={Home}></Route>
-              <Route path="/shopping" component={Shopping}></Route>
-              <Route path='/finance' component={Finance}></Route>
-              <Route path='/forum' component={Forum}></Route>
+          <Switch>
               <Route path='/login' component={Login}></Route>
               <Route path='/register' component={Register}></Route>
-              <Redirect from="*" to="/" />
-            </Switch>
-          </Layout>
+              <Route path="/" render={props=>(
+                <Layout>
+                  <Switch>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route path="/shopping" component={Shopping}></Route>
+                    <Route path='/finance' component={Finance}></Route>
+                    <Route path='/forum' component={Forum}></Route>
+                    <Redirect from="*" to="/" />
+                  </Switch>
+                </Layout>
+              )}></Route>
+          </Switch>
       </Router>
     )
   }

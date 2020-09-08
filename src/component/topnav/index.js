@@ -19,10 +19,6 @@ class TopNav extends Component {
         }
       ]
     }
-    this.hideTop=this.hideTop.bind(this)
-  }
-  hideTop(){
-    this.props.changeIsShowTop(false)
   }
   render() {
     return (
@@ -41,9 +37,9 @@ class TopNav extends Component {
             }
           </div>
           <div className="topbar-info">
-            <NavLink to="/login" onClick={()=>this.hideTop()}>登录</NavLink>
+            <NavLink to="/login">登录</NavLink>
             <span className="sep">|</span>
-            <NavLink to="/register" onClick={()=>this.hideTop()}>注册</NavLink>
+            <NavLink to="/register">注册</NavLink>
           </div>
         </div>
       </div>
