@@ -43,6 +43,7 @@ class Login extends Component {
           this.setState({
             loginStatus:true
           })
+          mm.setStorage('userInfo',res.data)
           this.props.history.push(this.state.redirect)
         }
       }).catch((err) => {

@@ -1,0 +1,12 @@
+.dropdown{
+  &:hover{
+    .dropdown-toggle+ul{
+      display: block;
+      li{
+        text-align: center;
+        cursor: pointer;
+        color: #666666;
+      }
+    }
+  }
+}

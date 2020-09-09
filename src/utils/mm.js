@@ -7,6 +7,21 @@ class MUtils{
       setTimeout(()=>{
         resolve({
           code:0,
+          data:{
+            username:params.username,
+            age:18,
+            sex:'mail'
+          },
+          msg:'success'
+        })
+      },500)
+    })
+  }
+  logoutrRequest(){
+    return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve({
+          code:0,
           data:'',
           msg:'success'
         })
@@ -26,6 +41,24 @@ class MUtils{
   }
   errorTips(msg='出错了'){
     alert(msg)
+  }
+  setStorage(key,val){
+    window.localStorage.setItem(key,typeof val==='object'?JSON.stringify(val):val)
+  }
+  getStorage(key){
+    let data=window.localStorage.getItem(key);
+    if(data){
+      return JSON.parse(data)
+    }
+    return null
+  }
+  removeStorage(key){
+    if(key){
+      window.localStorage.removeItem(key)
+    }else{
+      // 全部清空
+      window.localStorage.clear();
+    }
   }
 }
 

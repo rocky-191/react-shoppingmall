@@ -1,5 +1,10 @@
 import React, { Component,Fragment } from 'react';
 import {NavLink} from 'react-router-dom'
+import Nologin from './Nologin'
+import Logined from './Logined'
+import MUtils from 'utils/mm.js'
+
+let mm=new MUtils()
 class TopNav extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +26,7 @@ class TopNav extends Component {
     }
   }
   render() {
+    const userinfo=mm.getStorage('userInfo');
     return (
       <div className="topnav">
         <div className="container">
@@ -37,9 +43,7 @@ class TopNav extends Component {
             }
           </div>
           <div className="topbar-info">
-            <NavLink to="/login">登录</NavLink>
-            <span className="sep">|</span>
-            <NavLink to="/register">注册</NavLink>
+            {userinfo?<Logined {...this.props} />:<Nologin />}
           </div>
         </div>
       </div>

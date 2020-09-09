@@ -5,6 +5,9 @@ class User{
   login(params){
     return mm.request(params)
   }
+  logout(){
+    return mm.logoutrRequest()
+  }
 }
 
 export default User;

@@ -10,7 +10,7 @@ class Layout extends Component {
   render() {
     return (
       <div id="wrapper">
-        <TopNav />
+        <TopNav {...this.props} />
         {this.props.children}
       </div>
     );
