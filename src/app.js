@@ -10,6 +10,7 @@ import Forum from 'page/forum'
 import Finance from 'page/Finance'
 import Login from 'page/login'
 import Register from 'page/register'
+import ErrorPage from 'page/error'
 
 class App extends React.Component{
   constructor(props){
@@ -28,7 +29,8 @@ class App extends React.Component{
                     <Route path="/shopping" component={Shopping}></Route>
                     <Route path='/finance' component={Finance}></Route>
                     <Route path='/forum' component={Forum}></Route>
-                    <Redirect from="*" to="/" />
+                    <Route component={ErrorPage}></Route>
+                    {/* <Redirect from="*" to="/" /> */}
                   </Switch>
                 </Layout>
               )}></Route>
