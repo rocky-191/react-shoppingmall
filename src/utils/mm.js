@@ -1,5 +1,6 @@
 // 工具类
 class MUtils{
+  // 实际项目中会使用axios等请求库，配置拦截器等方法
   request(params){
     console.log(`请求参数：${params}`)
     return new Promise((resolve,reject)=>{
@@ -40,6 +41,9 @@ class MUtils{
     return result ? decodeURIComponent(result[2]) : null
   }
   errorTips(msg='出错了'){
+    alert(msg)
+  }
+  successTips(msg='成功了'){
     alert(msg)
   }
   setStorage(key,val){
